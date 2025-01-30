@@ -5,14 +5,14 @@ import jakarta.validation.constraints.*;
 
 
 @Entity
-public class Product {
+public class ProductEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @NotBlank(message = "O nome do produto não pode ser em branco.")
     @Column(unique = true)
-    private String name;
+    private String productName;
 
     @Positive(message = "O preço deve ser maior que zero.")
     private double price;
@@ -20,10 +20,10 @@ public class Product {
     @Min(value = 0, message = "A quantidade deve ser maior ou igual a zero.")
     private int quantity;
 
-    public Product() {}
+    public ProductEntity() {}
 
-    public Product(String name, double price, int quantity) {
-        this.name = name;
+    public ProductEntity(String productName, double price, int quantity) {
+        this.productName = productName;
         this.price = price;
         this.quantity = quantity;
     }
@@ -34,11 +34,11 @@ public class Product {
     public void setId(Long id) {
         this.id = id;
     }
-    public String getName() {
-        return name;
+    public String getProductName() {
+        return productName;
     }
-    public void setName(String name) {
-        this.name = name;
+    public void setProductName(String productName) {
+        this.productName = productName;
     }
     public double getPrice() {
         return price;

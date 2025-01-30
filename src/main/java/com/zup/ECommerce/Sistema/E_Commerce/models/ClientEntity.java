@@ -6,14 +6,14 @@ import org.hibernate.validator.constraints.br.CPF;
 
 @Entity
 
-public class Client {
+public class ClientEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @NotBlank(message = "O nome não pode ser em branco.")
-    private String name;
+    private String clientName;
 
     @CPF(message = "O CPF deve ser válido.")
     @Column(unique = true)
@@ -23,10 +23,10 @@ public class Client {
     @Column(unique = true)
     private String email;
 
-    public Client() {}
+    public ClientEntity() {}
 
-    public Client(String name, String cpf, String email) {
-        this.name = name;
+    public ClientEntity(String clientName, String cpf, String email) {
+        this.clientName = clientName;
         this.cpf = cpf;
         this.email = email;
     }
@@ -39,12 +39,12 @@ public class Client {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getClientName() {
+        return clientName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setClientName(String name) {
+        this.clientName = clientName;
     }
 
     public String getCpf() {
