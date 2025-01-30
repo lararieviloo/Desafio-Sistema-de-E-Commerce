@@ -1,10 +1,12 @@
 package com.zup.ECommerce.Sistema.E_Commerce.models;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.Column;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.*;
+import org.hibernate.validator.constraints.br.CPF;
 
 @Entity
 
@@ -14,8 +16,15 @@ public class Client {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotBlank(message = "O nome não pode ser em branco.")
     private String name;
+
+    @CPF(message = "O CPF deve ser válido.")
+    @Column(unique = true)
     private String cpf;
+
+    @Email(message = "O Email deve ser válido.")
+    @Column(unique = true)
     private String email;
 
     public Client() {}
