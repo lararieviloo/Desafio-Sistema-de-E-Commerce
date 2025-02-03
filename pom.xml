@@ -11,7 +11,7 @@
 	<groupId>com.zup.ECommerce</groupId>
 	<artifactId>Sistema-E-Commerce</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<productName>Sistema-E-Commerce</productName>
+	<name>Sistema-E-Commerce</name>
 	<description>Segundo desafio do projeto Catalisa</description>
 	<url/>
 	<licenses>
