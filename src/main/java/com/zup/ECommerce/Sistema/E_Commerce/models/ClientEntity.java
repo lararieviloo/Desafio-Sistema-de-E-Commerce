@@ -43,7 +43,7 @@ public class ClientEntity {
         return clientName;
     }
 
-    public void setClientName(String name) {
+    public void setClientName(String clientName) {
         this.clientName = clientName;
     }
 
