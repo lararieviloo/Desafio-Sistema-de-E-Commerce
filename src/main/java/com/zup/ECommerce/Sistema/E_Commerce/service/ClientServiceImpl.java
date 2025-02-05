@@ -10,6 +10,9 @@ import com.zup.ECommerce.Sistema.E_Commerce.repository.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Service
 public class ClientServiceImpl implements ClientService {
 
@@ -64,5 +67,13 @@ public class ClientServiceImpl implements ClientService {
         clientEntity.setEmail(clientRequestDTO.email());
         clientRepository.save(clientEntity);
         return mapToResponse(clientEntity);
+    }
+
+    @Override
+    public List<ClientResponseDTO> getAllClients() {
+        return clientRepository.findAll()
+                .stream()
+                .map(this::mapToResponse)
+                .collect(Collectors.toList());
     }
 }
