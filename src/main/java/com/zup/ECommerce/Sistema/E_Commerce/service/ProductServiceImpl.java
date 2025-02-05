@@ -3,6 +3,8 @@ package com.zup.ECommerce.Sistema.E_Commerce.service;
 
 import com.zup.ECommerce.Sistema.E_Commerce.dtos.ProductRequestDTO;
 import com.zup.ECommerce.Sistema.E_Commerce.dtos.ProductResponseDTO;
+import com.zup.ECommerce.Sistema.E_Commerce.exceptions.ProductAlreadyExistsException;
+import com.zup.ECommerce.Sistema.E_Commerce.exceptions.ProductNotFoundException;
 import com.zup.ECommerce.Sistema.E_Commerce.models.ProductEntity;
 import com.zup.ECommerce.Sistema.E_Commerce.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
