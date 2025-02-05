@@ -9,5 +9,4 @@ public interface ProductService {
     ProductResponseDTO addProduct(ProductRequestDTO productRequestDTO);
     List<ProductResponseDTO> getAllProducts();
     void deleteProduct(Long id);
-
 }
