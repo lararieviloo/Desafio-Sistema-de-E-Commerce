@@ -3,6 +3,8 @@ package com.zup.ECommerce.Sistema.E_Commerce.service;
 
 import com.zup.ECommerce.Sistema.E_Commerce.dtos.ClientRequestDTO;
 import com.zup.ECommerce.Sistema.E_Commerce.dtos.ClientResponseDTO;
+import com.zup.ECommerce.Sistema.E_Commerce.exceptions.ClientAlreadyExistsException;
+import com.zup.ECommerce.Sistema.E_Commerce.exceptions.ClientNotFoundException;
 import com.zup.ECommerce.Sistema.E_Commerce.models.ClientEntity;
 import com.zup.ECommerce.Sistema.E_Commerce.repository.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +30,7 @@ public class ClientServiceImpl implements ClientService {
                 clientEntity.getCpf(),
                 clientEntity.getEmail());
     }
+
     @Override
     public ClientResponseDTO addClient(ClientRequestDTO clientRequestDTO) {
         String cpf = clientRequestDTO.cpf();
